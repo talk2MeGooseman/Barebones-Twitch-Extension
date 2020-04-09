@@ -1,14 +1,15 @@
-import { join } from "lodash";
-import './style.css';
-
-function component() {
+function onAuth(uid) {
   const element = document.createElement('div');
-
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = join(['Hello', 'webpack'], ' ');
+  element.innerHTML = 'Twitch onAuthorized called with UID: ' + uid;
   element.classList.add('hello');
-
   return element;
 }
 
-document.body.appendChild(component());
+document.addEventListener('DOMContentLoaded', function () {
+  Twitch.ext.onAuthorized(function (auth) {
+    let tuid = auth.userId;
+
+    document.body.appendChild(onAuth(tuid));
+  });
+});
+

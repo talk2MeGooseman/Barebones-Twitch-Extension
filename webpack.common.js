@@ -1,10 +1,9 @@
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
   entry: {
     app: './src/index.js',
   },
@@ -21,15 +20,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       // Inserts Title tag to HTML template
       title: 'Video Overlay View',
-      // Creates new HTML file by name
-      filename: 'video-overlay.html',
       // Template HTML file
       template: 'src/index.html',
+      // Creates new HTML file by name
+      filename: 'video_overlay.html',
     }),
     new HtmlWebpackPlugin({
       title: 'Video Component View',
       template: 'src/index.html',
-      filename: 'video-component.html',
+      filename: 'video_component.html',
     }),
     new HtmlWebpackPlugin({
       title: 'Panel View',
@@ -40,6 +39,16 @@ module.exports = {
       title: 'Mobile View',
       template: 'src/index.html',
       filename: 'mobile.html',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Broadcaster Configuration View',
+      template: 'src/index.html',
+      filename: 'config.html',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Live Configuration View',
+      template: 'src/index.html',
+      filename: 'live_config.html',
     }),
   ],
   output: {
@@ -69,7 +78,7 @@ module.exports = {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all'
+          chunks: 'all',
         },
         // Combines all CSS being used into one file
         styles: {
