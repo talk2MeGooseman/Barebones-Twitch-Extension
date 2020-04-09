@@ -20,6 +20,8 @@ Inside `src` all generated HTML views use the same index.html template. If you w
 - Creating a new HTML page, it doesnt have to be called index.html
 - Open `webpack.common.js` and modify `template` to use your new HTML file
 
+Your JavaScript will files will automatically be included in to the HTML page using webpack. So all you have to do is write you JavaScript and webpack should handle the rest.
+
 ## Local Development
 
 To run in development use the common:
