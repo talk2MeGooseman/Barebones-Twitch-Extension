@@ -2,6 +2,8 @@
 
 Simple and straight to the point example configuration for creating a Twitch Extension.
 
+This repository complements the presentation for [Build Your First Twitch Extension](https://docs.google.com/presentation/d/1wAA1dzMM74RwLWCtp_SqtktVzp4I2sQYz_mwl5wq2Cs/edit?usp=sharing). I am using webpack to help with HTML page generation and running a local dev server.
+
 Generates HTML pages for the following views:
 
 - Overlay
